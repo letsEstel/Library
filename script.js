@@ -1,5 +1,6 @@
 const myLibrary = [];
 
+//Book generate function
 function Book(title, author, pages, read) {
   this.title = title;
   this.author = author;
@@ -27,10 +28,16 @@ const display = () => {
   }
   myLibrary.forEach((book, index) => {
     const bookEle = document.createElement("div");
-    bookEle.textContent = book.info();
+    bookEle.className = "bookEle";
+    const booktext = document.createElement("div");
+    booktext.textContent = book.info();
+    booktext.className = "bookText";
+    booktext.setAttribute("data-full-title", `${book.info()}`);
     div.appendChild(bookEle);
+    bookEle.appendChild(booktext);
     const deleBtn = document.createElement("button");
     deleBtn.textContent = "Delete";
+    deleBtn.className = "deleteButton";
     deleBtn.addEventListener("click", () => {
       myLibrary.splice(index, 1);
       display();
@@ -38,6 +45,7 @@ const display = () => {
     bookEle.appendChild(deleBtn);
     const readBtn = document.createElement("button");
     readBtn.textContent = "Read/Unread";
+    readBtn.className = "readButton";
     readBtn.addEventListener("click", () => {
       book.read = !book.read;
       display();
@@ -46,13 +54,14 @@ const display = () => {
   });
 };
 
-const book1 = new Book("King of rings", "bok", 200, false);
-
-const book2 = new Book("King of rins", "bo00k", 200, false);
+//A simple example
+const book1 = new Book("I Ching", "KingWen", 200, false);
+const book2 = new Book("Tao Te Ching", "Laozi", 197, true);
 addBookToLibrary(book1);
 addBookToLibrary(book2);
 display();
 
+//How to add new books
 const addNewBook = document.querySelector("#addNewBook");
 const dialog = document.querySelector("dialog");
 const closeButton = document.querySelector("#closeButton");

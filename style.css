@@ -1,0 +1,31 @@
+.bookEle {
+  display: flex;
+  border-color: black;
+  border: solid 1px;
+  margin: 4px;
+  padding: 3px;
+  width: 100%;
+  box-sizing: border-box; /* Includes padding and border in total width */
+  width: 100%; /* Ensures the element takes full width of its container */
+}
+body {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.readButton {
+  margin-right: 0px;
+}
+.deleteButton {
+  margin-left: auto;
+}
+
+.bookText {
+  word-break: break-all;
+}
+
+Button {
+  flex-shrink: 0; /* Prevents buttons from shrinking */
+  padding: 5px 10px;
+  margin-left: 5px;
+}
