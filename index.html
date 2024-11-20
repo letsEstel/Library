@@ -7,8 +7,25 @@
     <script src="script.js" defer></script>
   </head>
   <body>
-    <div></div>
-    <dialog></dialog>
-    <button>Add a new book</button>
+    <div class="container"></div>
+    <dialog>
+      <button id="closeButton">Close</button>
+      <form action="/">
+        <label for="title">Title:</label>
+        <input type="text" id="title" />
+        <label for="author">Author</label>
+        <input type="author" id="author" />
+        <label for="pages">Pages</label>
+        <input type="number" id="number" />
+
+        <div>
+          <input type="checkbox" name="read" value="read" />
+          <label for="read">Read</label>
+        </div>
+
+        <button type="submit">Add to the book list</button>
+      </form>
+    </dialog>
+    <button id="addNewBook">Add new books</button>
   </body>
 </html>
