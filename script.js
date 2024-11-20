@@ -8,11 +8,9 @@ function Book(title, author, pages, read) {
   this.read = read;
   this.info = () =>
     this.title +
-    " by " +
-    this.author +
+    (this.author == "" ? "" : " by " + this.author) +
     ", " +
-    this.pages +
-    " pages, " +
+    (this.pages == "" ? "" : this.pages + " pages, ") +
     (this.read ? "read." : "not read yet.");
 }
 
